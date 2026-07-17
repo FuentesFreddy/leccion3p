@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSONPlaceholder API Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Consumo de API REST - JSONPlaceholder</h1>
+        <p>Recurso: <code>/posts</code></p>
+    </header>
+
+    <main class="container">
+        <!-- Panel de Operaciones / Formularios -->
+        <section class="panel controls-panel">
+            <h2>Operaciones HTTP</h2>
+            
+            <!-- GET ALL -->
+            <div class="control-group">
+                <button id="btn-get-all" type="button">Obtener Todas las Publicaciones (GET)</button>
+            </div>
+
+            <!-- GET BY ID -->
+            <form id="form-get-id" class="control-group">
+                <label for="input-id">Consultar por ID:</label>
+                <div class="input-btn-row">
+                    <input type="number" id="input-id" min="1" max="100" placeholder="Ej: 5" required>
+                    <button type="submit">Buscar</button>
+                </div>
+            </form>
+
+            <!-- FILTER BY USER ID -->
+            <form id="form-filter-user" class="control-group">
+                <label for="input-user-id">Filtrar por ID de Usuario:</label>
+                <div class="input-btn-row">
+                    <input type="number" id="input-user-id" min="1" max="10" placeholder="Ej: 1" required>
+                    <button type="submit">Filtrar</button>
+                </div>
+            </form>
+
+            <!-- POST (CREATE) -->
+            <form id="form-create" class="control-group block-form">
+                <h3>Crear Nueva Publicación (POST)</h3>
+                <label for="create-user">ID Usuario:</label>
+                <input type="number" id="create-user" min="1" placeholder="Ej: 1" required>
+                
+                <label for="create-title">Título:</label>
+                <input type="text" id="create-title" placeholder="Título del post" required>
+                
+                <label for="create-body">Contenido:</label>
+                <textarea id="create-body" rows="2" placeholder="Cuerpo de la publicación..." required></textarea>
+                
+                <button type="submit">Enviar Publicación</button>
+            </form>
+
+            <!-- PATCH (UPDATE TITLE) -->
+            <form id="form-patch" class="control-group block-form">
+                <h3>Actualizar Título (PATCH)</h3>
+                <label for="patch-id">ID Publicación:</label>
+                <input type="number" id="patch-id" min="1" placeholder="Ej: 1" required>
+                
+                <label for="patch-title">Nuevo Título:</label>
+                <input type="text" id="patch-title" placeholder="Nuevo título modificado" required>
+                
+                <button type="submit">Actualizar Título</button>
+            </form>
+
+            <!-- DELETE -->
+            <form id="form-delete" class="control-group">
+                <label for="delete-id">Eliminar por ID (DELETE):</label>
+                <div class="input-btn-row">
+                    <input type="number" id="delete-id" min="1" placeholder="Ej: 1" required>
+                    <button type="submit" class="btn-danger">Eliminar</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Panel de Resultados Visuales -->
+        <section class="panel display-panel">
+            <h2>Resultados de la Vista (DOM)</h2>
+            <div class="output-wrapper">
+                <div id="ui-output" class="ui-output-area">
+                    <p class="placeholder-text">Presiona una operación para interactuar con la API. Revisa tu terminal para los logs de red.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
