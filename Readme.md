@@ -154,13 +154,13 @@ Abrir con → Navegador Web
 ## Construir la imagen
 
 ```bash
-docker build -t jsonplaceholder-api .
+docker build -t fjfuentes1/miapp:latest .
 ```
 
 ## Ejecutar el contenedor
 
 ```bash
-docker run -d -p 8080:80 --name jsonplaceholder-app jsonplaceholder-api
+docker run -d -p 8080:80 --name portal-espe fjfuentes1/miapp:latest
 ```
 
 ## Abrir la aplicación
@@ -168,6 +168,17 @@ docker run -d -p 8080:80 --name jsonplaceholder-app jsonplaceholder-api
 ```
 http://localhost:8080
 ```
+
+## Descargar img. de DockerHub
+```bash
+docker pull fjfuentes1/miapp:latest
+```
+
+## Comando para ejecutar el contenedor desde la imagen pública
+```bash
+docker run -d -p 8080:80 --name portal-espe fjfuentes1/miapp:latest
+```
+
 
 ---
 
